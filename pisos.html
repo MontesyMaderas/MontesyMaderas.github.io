@@ -58,15 +58,15 @@
     <div class="container">
       <div class="row">
       <div class="col-md-6 col-md-offset-3 mb40 text-center">
-        <h2>Nuestros trabajos de escaleras en madera</h2>
+        <h2>Nuestros trabajos de pisos en madera</h2>
         <p>Finalizados en septiembre de 2017</p>
       </div>
-      <div class="col-md-6">
-        <p>Nuestro compromiso con la calidad y el detalle se refleja en cada escalera que creamos. Usando madera de la más alta calidad, nuestras escaleras no sólo son funcionales, sino también piezas de arte en su hogar. Desde la selección de la madera, hasta el último acabado, cada paso en nuestro proceso está diseñado para garantizar la satisfacción del cliente.</p>
-      </div>
-      <div class="col-md-6">
-        <p>Cada escalera es única, diseñada para adaptarse al espacio y al estilo del cliente. Nuestro equipo de expertos artesanos se esfuerza por crear escaleras que no sólo sean atractivas a la vista, sino que también aporten valor a su hogar. Acompáñenos en un recorrido por algunos de nuestros trabajos más destacados.</p>
-      </div>
+        <div class="col-md-6">
+          <p>Nuestro compromiso con la calidad y la perfección se refleja en cada piso que instalamos. Utilizando materiales de la más alta calidad, nuestros pisos no sólo son prácticos y duraderos, sino también elementos que realzan la belleza de su hogar. Desde la elección de los materiales hasta el último detalle de la instalación, cada paso de nuestro proceso está diseñado para garantizar la satisfacción del cliente.</p>
+        </div>
+        <div class="col-md-6">
+          <p>Cada piso es único, diseñado para adaptarse a la estética y las necesidades específicas de cada cliente. Nuestro equipo de expertos artesanos trabaja con dedicación para crear pisos que no sólo sean visualmente atractivos, sino que también aporten un valor duradero a su hogar. Le invitamos a un recorrido por algunos de nuestros proyectos de pisos más destacados.</p>
+        </div>
     </div>
 
       <div id="image-container">
@@ -98,7 +98,60 @@
   <script src="js/scripts.min.js"></script>
   <script src="js/main.min.js"></script>
   <script src="js/custom.js"></script>
-  <script src="js/imageLoader.js"></script>
+
+  <script>
+
+    window.onload = function() {
+      const images = [
+        "WhatsApp Image 2023-06-07 at 10.20.38 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.41 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.38 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.41 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.38 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.19 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.19 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.27 PM (2).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.27 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.23 PM (4).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.23 PM (2).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.18 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.18 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.27 PM (3).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.17 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.17 PM (2).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.17 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.16 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.16 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.15 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.15 PM (1).jpeg",
+      ];
+
+      const imageContainer = document.getElementById('image-container');
+
+      images.forEach(function(imageName, index) {
+        const imageHtml = createImageHtml(imageName);
+        const div = document.createElement('div');
+        div.className = 'col-md-6';
+        div.innerHTML = imageHtml;
+        imageContainer.appendChild(div);
+      });
+
+      // Inicializa la funcionalidad de popup aquí, después de que todas las imágenes han sido agregadas
+      $('.image-popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+        // otras opciones aquí
+      });
+    };
+
+    function createImageHtml(imageName) {
+      return `<p><a href="imgs/Pisos/${imageName}" class="image-popup"><img src="imgs/Pisos/${imageName}" class="img-responsive" alt="Free HTML5 Bootstrap Template by uicookies.com"></a></p>`;
+    }
+
+
+  </script>
 
   </body>
 </html>
