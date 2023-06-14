@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>uiCookies:Explorer &mdash; Free Bootstrap Theme, Free Responsive Bootstrap Website Template</title>
+    <meta name="description" content="Free Bootstrap Theme by uicookies.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+  <!-- START: header -->
+  
+  <div class="probootstrap-loader"></div>
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container">
+        <a href="index.html" class="probootstrap-logo">Inicio<span>.</span></a>
+        
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li class="active"><a href="index.html">Inicio</a></li>
+            <li><a href="services.html">Servicios</a></li>
+            <li><a href="about.html">Sobre Mi</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+          <div class="extra-text visible-xs"> 
+            <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
+            <!--
+            <h5>Address</h5>
+            <p>198 West 21th Street, Suite 721 New York NY 10016</p>-->
+            <h5>Redes Sociales</h5>
+            <ul class="social-buttons">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook2"></i></a></li>
+              <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  </header>
+  <!-- END: header -->
+  
+  <div class="probootstrap-section">
+    <div class="container">
+      <div class="row">
+      <div class="col-md-6 col-md-offset-3 mb40 text-center">
+        <h2>Nuestros trabajos en techos</h2>
+        <p>Finalizados en septiembre de 2017</p>
+      </div>
+        <div class="col-md-6">
+          <p>Nuestro compromiso con la calidad y la perfección se refleja en cada piso que instalamos. Utilizando materiales de la más alta calidad, nuestros pisos no sólo son prácticos y duraderos, sino también elementos que realzan la belleza de su hogar. Desde la elección de los materiales hasta el último detalle de la instalación, cada paso de nuestro proceso está diseñado para garantizar la satisfacción del cliente.</p>
+        </div>
+        <div class="col-md-6">
+          <p>Cada piso es único, diseñado para adaptarse a la estética y las necesidades específicas de cada cliente. Nuestro equipo de expertos artesanos trabaja con dedicación para crear pisos que no sólo sean visualmente atractivos, sino que también aporten un valor duradero a su hogar. Le invitamos a un recorrido por algunos de nuestros proyectos de pisos más destacados.</p>
+        </div>
+    </div>
+
+      <div id="image-container">
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="probootstrap-footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="probootstrap-social">
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-facebook2"></i></a></li>
+            <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            <li><a href="#"><i class="icon-google-plus"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
+  </div>
+
+  <script src="js/scripts.min.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/custom.js"></script>
+
+  <script>
+
+    window.onload = function() {
+      const images = [
+        "WhatsApp Image 2023-06-07 at 10.20.36 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.20.30 PM (2).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.39 PM.jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.39 PM (1).jpeg",
+        "WhatsApp Image 2023-06-07 at 10.18.35 PM.jpeg",
+      ];
+
+      const imageContainer = document.getElementById('image-container');
+
+      images.forEach(function(imageName, index) {
+        const imageHtml = createImageHtml(imageName);
+        const div = document.createElement('div');
+        div.className = 'col-md-6';
+        div.innerHTML = imageHtml;
+        imageContainer.appendChild(div);
+      });
+
+      // Inicializa la funcionalidad de popup aquí, después de que todas las imágenes han sido agregadas
+      $('.image-popup').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+        // otras opciones aquí
+      });
+    };
+
+    function createImageHtml(imageName) {
+      return `<p><a href="imgs/Techos/${imageName}" class="image-popup"><img src="imgs/Techos/${imageName}" class="img-responsive" alt="Free HTML5 Bootstrap Template by uicookies.com"></a></p>`;
+    }
+
+
+  </script>
+
+  </body>
+</html>
